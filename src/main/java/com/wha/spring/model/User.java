@@ -24,14 +24,29 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "NAME", nullable = false)
-	private String name;
+	@Column(name = "nom", nullable = false)
+	private String nom;
 	
-	@Column(name = "USERNAME", nullable = false)
-	private String username;
+	@Column(name = "Prenom", nullable = false)
+	private String prenom;
 	
-	@Column(name = "EMAIL", nullable = false)
+	@Column(name = "email", nullable = false)
 	private String email;
+	
+	@Column(name = "adresse", nullable = false)
+	private String adresse;
+	
+	@Column(name = "telephone", nullable = false)
+	private String telephone;
+	
+	@Column(name = "pseudo", nullable = false)
+	private String pseudo;
+	
+	@Column(name = "mdp", nullable = false)
+	private String mdp;
+	
+	
+	
 
 	
 }
