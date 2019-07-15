@@ -1,5 +1,7 @@
 package com.wha.spring.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,17 +19,15 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Demande")
-public class DemandeOuverture {
+@Table(name = "notification")
+
+public class Notification {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private int id;
-private ClientPotentiel clientPotentiel;
-
-@Column(name = "valide", nullable = false)
-private String valide;
-private Conseiller conseiller;
-
-
+	@Column(name = "date", nullable = false)
+	private Date date;
+	@Column(name = "message", nullable = false)
+	private String message;
 }
