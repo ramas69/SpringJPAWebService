@@ -20,17 +20,19 @@ import com.wha.spring.model.User;
 @RequestMapping("users")
 public class UserController {
 
-	@Autowired
+	@Autowired 
 	UserService userService;
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
 	public void dummy() {
-		User u1 = new User(0, "Jemal Ahmed", "Ahmed.Jemal", "jmlhmd@gmail.com");
+/*		User u1 = new User(0, "Jemal Ahmed", "Ahmed.Jemal", "jmlhmd@gmail.com");
 		User u2 = new User(0, "Leanne Graham", "Bret", "Sincere@april.biz");
 		User u3 = new User(0, "Clementina DuBuque", "Moriah.Stanton", "Rey.Padberg@karina.biz");
 		userService.saveUser(u1);
 		userService.saveUser(u2);
-		userService.saveUser(u3);
+		userService.saveUser(u3);*/
+		
+		
 	}
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/get/all", method = RequestMethod.GET)
