@@ -32,4 +32,6 @@ public class User {
 	
 	@Column(name = "EMAIL", nullable = false)
 	private String email;
+
+	
 }
