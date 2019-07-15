@@ -21,9 +21,9 @@ import lombok.Setter;
 @Table(name = "Conseiller")
 public class Conseiller extends User{
 	
-	/*List<Client> listsClient = new ArrayList<Client>();
-	List<Requete> listeDemandeClients= new ArrayList<Client>();*/
-	/*List<DemandeOuvertureAValider> listeDemandeOuvertureAValider= new ArrayList<Client>();*/
+/*	List<Client> listsClient = new ArrayList<Client>();
+	List<Requete> listeDemandeClients= new ArrayList<Client>();
+	List<DemandeOuverture> listeDemandeOuvertureAValider= new ArrayList<Client>();*/
 	
 	
 
