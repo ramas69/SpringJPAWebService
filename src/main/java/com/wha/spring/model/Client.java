@@ -31,5 +31,5 @@ public class Client extends User {
 	//@ManyToOne(mappedBy="client",fetch=FetchType.LAZY)
 	//private Conseiller conseiller;
 	
-
+ 
 }
