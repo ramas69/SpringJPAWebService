@@ -37,8 +37,10 @@ public class Compte {
 	private double mntantAgios;
 	@Column(name = "nom", nullable = false)
 	private double seuilRemuneration;
+	
 	private double montantRemuneration;
-	//private List<Notification> listeNotification;
+	
+	private List<Notification> listeNotification;
 	
 	
 }

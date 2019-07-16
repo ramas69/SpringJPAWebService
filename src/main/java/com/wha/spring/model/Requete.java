@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-/*@Getter
+@Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor*/
+@AllArgsConstructor
 public class Requete {
 	
 	private Client client;
-	//private Compte compte;
+	private Compte compte;
 	private String message;
 	private TypeRequete type;
 

@@ -14,18 +14,21 @@ import lombok.Setter;
 
 @Entity
 @DiscriminatorValue("Conseiller")
-/*@Getter
+@Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor*/
+@AllArgsConstructor
 @Table(name = "Conseiller")
 public class Conseiller extends User{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
-/*	List<Client> listsClient = new ArrayList<Client>();
-	List<Requete> listeDemandeClients= new ArrayList<Client>();
-	List<DemandeOuverture> listeDemandeOuvertureAValider= new ArrayList<Client>();*/
-	
-	
+	List<Client> listClient = new ArrayList<Client>();
+	List<Requete> listeDemandeClients= new ArrayList<Requete>();
+	List<DemandeOuverture> listeDemandeOuvertureAValider= new ArrayList<DemandeOuverture>();
 
 }
 
