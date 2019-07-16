@@ -1,5 +1,6 @@
 package com.wha.spring.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -27,7 +28,7 @@ public class Notification {
 	private int id;
 
 	@Column(name = "date", nullable = false)
-	private Date date;
+	private LocalDate date;
 	
 	@Column(name = "message", nullable = false)
 	private String message;
