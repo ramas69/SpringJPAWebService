@@ -26,6 +26,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+
 @Table(name = "Client")
 public class Client extends User {
 	/**
