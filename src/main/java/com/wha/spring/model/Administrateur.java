@@ -2,8 +2,10 @@ package com.wha.spring.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,6 +27,7 @@ public class Administrateur extends User{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	
 	@OneToMany
 	private List<Conseiller> listeConseilleir;

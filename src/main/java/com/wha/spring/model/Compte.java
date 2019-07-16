@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -56,6 +57,21 @@ public class Compte {
 	
 	
 	private Client client;
+
+@Builder
+	public Compte(int id, String rib, String nCompte, double solde,
+			double decouvert, double mntantAgios, double seuilRemuneration,
+			double montantRemuneration, Client client) {
+		//super();
+		this.id = id;
+		this.rib = rib;
+		this.nCompte = nCompte;
+		this.solde = solde;
+		this.decouvert = decouvert;
+		this.mntantAgios = mntantAgios;
+		this.seuilRemuneration = seuilRemuneration;
+		this.montantRemuneration = montantRemuneration;
+	}
 
 	
 	
