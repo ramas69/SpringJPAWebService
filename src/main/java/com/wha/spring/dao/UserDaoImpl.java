@@ -2,6 +2,7 @@ package com.wha.spring.dao;
 
 import java.util.List;
 
+
 //import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +30,7 @@ public class UserDaoImpl extends AbstractDao implements UserDao {
 		em.merge(employee);
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<User> findAllUsers() {
 		return em.createQuery("From User").getResultList();
 	}

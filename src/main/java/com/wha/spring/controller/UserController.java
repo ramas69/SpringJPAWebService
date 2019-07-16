@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wha.spring.iservice.UserService;
+import com.wha.spring.model.Client;
 import com.wha.spring.model.User;
 
 @RestController
@@ -31,6 +32,8 @@ public class UserController {
 		userService.saveUser(u1);
 		userService.saveUser(u2);
 		userService.saveUser(u3);*/
+		//Client cl=new Client();
+		//cl.setAdresse("");
 		
 		
 	}
