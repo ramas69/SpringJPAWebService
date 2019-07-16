@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -27,20 +28,35 @@ public class Compte {
 	private int id;
 	@Column(name = "rib", nullable = false)
 	private String rib;
+	
+	@Column(name = "nCompte", nullable = false)
+	private String nCompte;
+	
 	@Column(name = "solde", nullable = false)
 	private double solde;
-	@Column(name = "nom", nullable = false)
+	
+	//@Column(name = "nom", nullable = false)
+	@OneToMany(mappedBy="compte")
 	private List<Transaction> listeTransactions;
-	@Column(name = "nom", nullable = false)
+	
+	@Column(name = "decouvert", nullable = false)
 	private double decouvert;
-	@Column(name = "nom", nullable = false)
+	
+	@Column(name = "mntantAgios", nullable = false)
 	private double mntantAgios;
-	@Column(name = "nom", nullable = false)
+	
+	@Column(name = "seuilRemuneration", nullable = false)
 	private double seuilRemuneration;
 	
+	@Column(name = "montantRemuneration", nullable = false)
 	private double montantRemuneration;
 	
-	private List<Notification> listeNotification;
+	@OneToMany(mappedBy="compte")
+	private List<Notification> listeNotifications;
+	
+	
+	private Client client;
+
 	
 	
 }
