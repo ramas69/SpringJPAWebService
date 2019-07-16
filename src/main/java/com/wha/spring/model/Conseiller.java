@@ -3,8 +3,11 @@ package com.wha.spring.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -14,18 +17,23 @@ import lombok.Setter;
 
 @Entity
 @DiscriminatorValue("Conseiller")
-/*@Getter
+@Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor*/
+@AllArgsConstructor
 @Table(name = "Conseiller")
-public class Conseiller extends User{
-	
-/*	List<Client> listsClient = new ArrayList<Client>();
-	List<Requete> listeDemandeClients= new ArrayList<Client>();
-	List<DemandeOuverture> listeDemandeOuvertureAValider= new ArrayList<Client>();*/
-	
-	
+public class Conseiller extends User {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "conseiller")
+	List<Client> listClient = new ArrayList<Client>();
+	@OneToMany
+	List<Requete> listeDemandeClients = new ArrayList<Requete>();
+
+	@OneToMany
+	List<DemandeOuverture> listeDemandeOuvertureAValider = new ArrayList<DemandeOuverture>();
 
 }
-
