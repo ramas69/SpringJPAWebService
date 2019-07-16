@@ -31,7 +31,7 @@ public class AdministrateurDaoImpl extends AbstractDao implements Administrateur
 	@Override
 	public List<Administrateur> findAllAdministrateurs() {
 		// TODO Auto-generated method stub
-		return em.createQuery("From Administrateur where user_type=Administrateur").getResultList();
+		return em.createQuery("From Administrateur").getResultList();
 	}
 
 	@Override

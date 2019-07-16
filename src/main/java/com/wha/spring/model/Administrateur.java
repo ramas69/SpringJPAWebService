@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -32,13 +34,16 @@ public class Administrateur extends User{
 	
 	
 	@OneToMany
+	@JsonIgnore
 	private List<Conseiller> listeConseillers;
 	@OneToMany
+	@JsonIgnore
 	private List<DemandeOuverture> listeDemandeOuverture;
 	
 	@Builder
 	public Administrateur(int id, String nom, String prenom, String email,
 			String adresse, String telephone, String pseudo, String mdp) {
+		
 		super(id, nom, prenom, email, adresse, telephone, pseudo, mdp);
 		// TODO Auto-generated constructor stub
 		this.listeConseillers=new ArrayList<Conseiller>();

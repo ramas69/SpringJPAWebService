@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -37,6 +39,7 @@ public class Client extends User {
 
 	private int identifiant;
 	@OneToMany(mappedBy="client",fetch=FetchType.LAZY)
+	@JsonIgnore
 	private List<Compte> comptes;
 	private double revenuMenus;
 	private String piecesJustif;

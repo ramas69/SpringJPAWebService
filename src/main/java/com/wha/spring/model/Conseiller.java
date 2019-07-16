@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,11 +31,14 @@ public class Conseiller extends User {
 	private static final long serialVersionUID = 1L;
 	// cascade = { CascadeType.ALL }, fetch = FetchType.EAGER,
 	@OneToMany(mappedBy = "conseiller")
+	@JsonIgnore
 	List<Client> listClient = new ArrayList<Client>();
 	@OneToMany
+	@JsonIgnore
 	List<Requete> listeDemandeClients = new ArrayList<Requete>();
 
 	@OneToMany
+	@JsonIgnore
 	List<DemandeOuverture> listeDemandeOuvertureAValider = new ArrayList<DemandeOuverture>();
 
 	

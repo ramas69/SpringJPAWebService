@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.wha.spring.iservice.AdministrateurService;
 import com.wha.spring.model.Administrateur;
+import com.wha.spring.model.ClientPotentiel;
+import com.wha.spring.model.DemandeOuverture;
 
 
 @RestController
@@ -26,14 +28,16 @@ public class AdministrateurController {
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
 	public Administrateur dummy() {
 
-		Administrateur ad=new Administrateur(0, "nom admin1", "prenom admin1", "admin1@yah.com", "lyon", "032145698", "adminpseudo", "adminpass");
+		Administrateur ad=new Administrateur(0, "nom admin3", "prenom admin3", "admin3@yah.com", "lyon", "032145698", "adminpseudo3", "adminpass3");
 		administrateurService.saveAdministrateur(ad);
+		
 		return ad;
 	}
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/get/all", method = RequestMethod.GET)
 	public ResponseEntity<List<Administrateur>> getAll() {
 		List<Administrateur> resultat = administrateurService.findAllAdministrateurs();
+		System.out.println("resultat : "+resultat.toString());
 		return new ResponseEntity<List<Administrateur>> (resultat, HttpStatus.OK);
 	}
 

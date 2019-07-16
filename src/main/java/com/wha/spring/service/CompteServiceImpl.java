@@ -25,7 +25,7 @@ public class CompteServiceImpl implements CompteService {
 	@Override
 	public Compte findById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return compteDAO.findById(id);
 	}
 
 	@Override

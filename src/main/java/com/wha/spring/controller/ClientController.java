@@ -29,8 +29,8 @@ public class ClientController {
 	public void dummy() {
 		Client cl1 = new Client(0, "nom"," prenom", "email", "adress", "telephone", "pseudo", "mdp", 001, 25.5,"piecesJustif" );
 		clientService.saveClient(cl1);
-		
-		
+		Client cl2 = new Client(0, "nom1"," prenom1", "email1", "adress1", "telephone1", "pseudo1", "mdp1", 002, 30.5,"piecesJustif1" );
+		clientService.saveClient(cl2);
 		
 	}
 	@CrossOrigin(origins = "http://localhost:4200")

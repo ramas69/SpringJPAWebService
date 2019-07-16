@@ -30,7 +30,7 @@ public class ConseillerDaoImpl extends AbstractDao implements ConseillerDao {
 	@Override
 	public List<Conseiller> findAllConseillers() {
 		// TODO Auto-generated method stub
-		return em.createQuery("From Conseiller where user_type=Conseiller").getResultList();
+		return em.createQuery("From Conseiller ").getResultList();
 	}
 
 	@Override
