@@ -32,7 +32,6 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public void deleteUser(int id) {
-		// TODO Auto-generated method stub
 		userDAO.deleteUser(id);
 	}
 

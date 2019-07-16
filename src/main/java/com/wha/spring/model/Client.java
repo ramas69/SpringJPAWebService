@@ -1,5 +1,6 @@
 package com.wha.spring.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.DiscriminatorValue;
@@ -13,6 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -41,6 +43,16 @@ public class Client extends User {
 	private Conseiller conseiller;
 	@OneToMany(mappedBy="client")
 	private List<Requete> requete;
+	
+	 @Builder
+	    public Client(int id,String nom, String prenom, String email, String adress, String telephone, String pseudo, String mdp, int identifiant, double revenuMenus, String piecesJustif ) {
+	        super(0,nom, prenom, email, adress, telephone, pseudo, mdp);
+	        this.identifiant= identifiant;
+	        this.revenuMenus= revenuMenus;
+	        this.piecesJustif= piecesJustif;
+	        this.comptes = new ArrayList<Compte>();
+	        this.requete = new ArrayList<Requete>();
+	    }
 	
  
 }
