@@ -45,6 +45,6 @@ public class Transaction {
 	private String libelle;
 
 	@Column(name = "date", nullable = false)
-	private Date date;
+	private LocalDate date;
 
 }
