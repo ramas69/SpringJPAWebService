@@ -1,12 +1,7 @@
 package com.wha.spring.model;
 
 
-<<<<<<< HEAD
-
 import java.util.Calendar;
-=======
-import java.time.LocalDate;
->>>>>>> springTrans
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

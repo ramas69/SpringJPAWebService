@@ -37,18 +37,10 @@ public class NotificationControlleur {
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
 	public Notification dummy() {
-<<<<<<< HEAD
 	Notification notif1 = new Notification(0, Calendar.getInstance(), " message envoye t'es pauvre",null);
 		notifService.saveNotification(notif1);	
 		return notif1;
-=======
-		 LocalDate date = LocalDate.now();
-	Notification notif1 = new Notification(0, date, " message envoye t'es pauvre",null);
-		notifService.saveNotification(notif1);
-		return notif1;
 
-		
->>>>>>> springTrans
 	}
 	
 	@CrossOrigin(origins = "http://localhost:4200")

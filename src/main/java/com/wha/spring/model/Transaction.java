@@ -1,15 +1,7 @@
 package com.wha.spring.model;
 
-import java.time.LocalDate;
-<<<<<<< HEAD
-
-
-
-
 import java.util.Calendar;
-=======
-//import java.util.Date;
->>>>>>> f40c836b420984832257fc48f9262469cb4388f4
+
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
