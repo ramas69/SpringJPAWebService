@@ -3,6 +3,9 @@ package com.wha.spring.idao;
 import java.util.List;
 
 import com.wha.spring.model.Client;
+import com.wha.spring.model.Compte;
+import com.wha.spring.model.Requete;
+import com.wha.spring.model.TypeRequete;
 
 
 public interface ClientDao {
@@ -15,5 +18,10 @@ public interface ClientDao {
 	Client findById(int identifiant);
 
 	void deleteClient(int identifiant);
+	
+	
+	
+
+	
 
 }

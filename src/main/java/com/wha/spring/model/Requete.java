@@ -1,9 +1,11 @@
 package com.wha.spring.model;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -22,7 +24,7 @@ import lombok.Setter;
 public class Requete {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	@ManyToOne
@@ -35,6 +37,7 @@ public class Requete {
 	private String message;
 	
 	@Enumerated
+	@Column()
 	private TypeRequete type;
 
 }
