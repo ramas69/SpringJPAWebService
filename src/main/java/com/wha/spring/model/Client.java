@@ -52,7 +52,7 @@ public class Client extends User {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="client")
-	private List<Requete> requete;
+	private List<Requete> listeRequetes;
 	
 	 @Builder
 	    public Client(int id,String nom, String prenom, String email, String adress, String telephone, String pseudo, String mdp, int identifiant, double revenuMenus, String piecesJustif ) {
@@ -61,7 +61,7 @@ public class Client extends User {
 	        this.revenuMenus= revenuMenus;
 	        this.piecesJustif= piecesJustif;
 	        this.comptes = new ArrayList<Compte>();
-	        this.requete = new ArrayList<Requete>();
+	        this.listeRequetes = new ArrayList<Requete>();
 	    }
 	
  

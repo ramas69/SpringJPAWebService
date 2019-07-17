@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.wha.spring.idao.ConseillerDao;
 import com.wha.spring.iservice.ConseillerService;
+import com.wha.spring.model.Compte;
 import com.wha.spring.model.Conseiller;
 
 
@@ -38,5 +39,17 @@ public class ConseillerServiceImpl implements ConseillerService {
 
 	public Conseiller findById(int id) {
 		return conseillerDao.findById(id);
+	}
+
+	@Override
+	public void modificationDecouvert(Compte compte, double montant) {
+		// TODO Auto-generated method stub
+		conseillerDao.modificationDecouvert(compte, montant);
+	}
+
+	@Override
+	public void modificationRemuneration(Compte compte, double montant) {
+		// TODO Auto-generated method stub
+		conseillerDao.modificationRemuneration(compte, montant);
 	}
 }

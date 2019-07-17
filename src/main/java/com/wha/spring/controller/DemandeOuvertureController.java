@@ -26,6 +26,7 @@ public class DemandeOuvertureController {
 	public DemandeOuverture dummy() {
 		DemandeOuverture deo = new DemandeOuverture(0, null, true, null);	
 		DemandeOuvertureService.saveDemandeOuverture(deo);
+		System.out.println("valid : "+deo.isValide());
 		return deo;
 		
 		
