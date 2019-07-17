@@ -6,7 +6,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.wha.spring.idao.ConseillerDao;
+import com.wha.spring.model.Compte;
 import com.wha.spring.model.Conseiller;
+import com.wha.spring.model.Requete;
 
 @Repository("coseilleirDao")
 @Transactional
@@ -43,6 +45,27 @@ public class ConseillerDaoImpl extends AbstractDao implements ConseillerDao {
 	public Conseiller findById(int id) {
 		// TODO Auto-generated method stub
 		return (Conseiller) em.find(Conseiller.class, id);
+	}
+
+	@Override
+	public void modificationDecouvert(Compte compte, double montant) {
+		// TODO Auto-generated method stub
+		compte.setDecouvert(montant);
+		em.merge(compte);
+	}
+
+	@Override
+	public void modificationRemuneration(Compte compte, double montant) {
+		// TODO Auto-generated method stub
+		compte.setMontantRemuneration(montant);
+		em.merge(compte);
+	}
+
+	@Override
+	public void validerDemandChequier(Compte compte) {
+		// TODO Auto-generated method stub
+		//compte.getId();
+		
 	}
 	
 
