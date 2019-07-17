@@ -1,12 +1,11 @@
 package com.wha.spring.controller;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,11 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
-
 import com.wha.spring.iservice.ClientService;
+import com.wha.spring.iservice.CompteService;
+import com.wha.spring.iservice.RequeteService;
+import com.wha.spring.iservice.TransactionService;
 import com.wha.spring.model.Client;
+import com.wha.spring.model.Compte;
+import com.wha.spring.model.Requete;
+import com.wha.spring.model.Transaction;
 
 
 @RestController
@@ -26,6 +28,15 @@ import com.wha.spring.model.Client;
 public class ClientController {
 	@Autowired 
 	ClientService clientService;
+	
+	@Autowired
+	RequeteService requeteService;
+	
+	@Autowired
+	CompteService compteService;
+	
+	@Autowired
+	TransactionService transactionService;
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
 	public Client dummy() {
@@ -55,5 +66,33 @@ public class ClientController {
 		clientService.updateClient(client);
 		return client;
 	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value = "/demandes", method = RequestMethod.POST)
+	public Requete demandeRequete(@RequestBody Requete requete) {     
+		return requeteService.saveRequete(requete);
+	}
+	/*
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value = "/compte/{idCompte}", method = RequestMethod.POST)	
+	public Compte afficherCompte(@PathVariable int idCompte) {     
+		return compteService.findById(idCompte);
+	}*/
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value = "/comptes", method = RequestMethod.GET)
+	public List<Compte>  afficherListCompte() {     
+		return compteService.findAllComptes();
+	}
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	//@PostMapping("/transactions")
+	@RequestMapping(value = "/transactions", method = RequestMethod.GET)
+	public List<Transaction> listTransaction() {     		
+		return transactionService.findAllTransactions();
+	}
+	
+	
+	
 
 }
