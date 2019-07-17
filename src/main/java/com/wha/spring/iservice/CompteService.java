@@ -14,5 +14,8 @@ public interface CompteService {
 	public List<Compte> findAllComptes();
 
 	public void deleteCompte(int id);
+	
+	public void virementCompte(Compte cp1, Compte cp2, String type,
+			double montant);
 
 }

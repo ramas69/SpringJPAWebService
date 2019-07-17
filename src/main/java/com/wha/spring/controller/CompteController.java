@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,22 +19,21 @@ import com.wha.spring.iservice.UserService;
 import com.wha.spring.model.Compte;
 import com.wha.spring.model.User;
 
-
 @RestController
 @RequestMapping("comptes")
 public class CompteController {
-	
 
-
-	@Autowired 
+	@Autowired(required=true)
 	CompteService compteService;
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
 	public Compte dummy() {
-		//Compte cp1 = new Compte(0," rib", "25415", 2500.00, 1500.21, 521.69, 100.50, 1200.54, 1);
-		//Compte cp1 = new Compte(id, rib, nCompte, solde, decouvert, mntantAgios, seuilRemuneration, montantRemuneration, client)
-		
-		Compte cp1 =new Compte();
+		// Compte cp1 = new Compte(0," rib", "25415", 2500.00, 1500.21, 521.69,
+		// 100.50, 1200.54, 1);
+		// Compte cp1 = new Compte(id, rib, nCompte, solde, decouvert,
+		// mntantAgios, seuilRemuneration, montantRemuneration, client)
+
+		Compte cp1 = new Compte();
 		cp1.setId(0);
 		cp1.setRib("12345");
 		cp1.setNCompte("00124500");
@@ -42,12 +42,12 @@ public class CompteController {
 		cp1.setMntantAgios(251.69);
 		cp1.setSeuilRemuneration(100.50);
 		cp1.setMontantRemuneration(1200.54);
-		//compteService.saveCompte(cp1);
+		// compteService.saveCompte(cp1);
 		compteService.saveCompte(cp1);
 		return cp1;
-		
-		
+
 	}
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/get/all", method = RequestMethod.GET)
 	public ResponseEntity<List<Compte>> getAll() {
@@ -67,8 +67,20 @@ public class CompteController {
 	public Compte updateCompte(@RequestBody Compte compte) {
 		compteService.updateCompte(compte);
 		return compte;
-		
-	
+
 	}
 
+	@CrossOrigin(origins = "http://localhost:4200")
+	//@PostMapping("/virement")
+	@RequestMapping(value = "/virement/{idCompte1}/{idCompte2}/{type}/{montant}", method = RequestMethod.GET)
+	public void virementCompte(@PathVariable int idCompte1,
+			@PathVariable int idCompte2, @PathVariable String type,
+			@PathVariable double montant) {
+		// compteService
+		
+		Compte cp1 = compteService.findById(idCompte1);
+		Compte cp2 = compteService.findById(idCompte2);
+		 compteService.virementCompte(cp1, cp2, type, montant);
+		
+	}
 }

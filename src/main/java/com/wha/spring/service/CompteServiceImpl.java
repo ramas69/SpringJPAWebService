@@ -45,4 +45,14 @@ public class CompteServiceImpl implements CompteService {
 
 	}
 
+	@Override
+	public void virementCompte(Compte cp1, Compte cp2, String type,
+			double montant) {
+		compteDAO.virementCompte(cp1, cp2, type, montant);
+		
+		
+	}
+
+	
+
 }

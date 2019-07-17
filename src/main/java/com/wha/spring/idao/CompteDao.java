@@ -15,6 +15,8 @@ public interface CompteDao {
 	Compte findById(int id);
 
 	void deleteCompte(int id);
+	
+	public void virementCompte(Compte cp1, Compte cp2, String type, double montant );
 
 	
 

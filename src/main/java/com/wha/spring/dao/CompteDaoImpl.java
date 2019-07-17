@@ -45,4 +45,19 @@ public class CompteDaoImpl extends AbstractDao implements CompteDao {
 		
 	}
 
+	@Override
+	public void virementCompte(Compte cp1, Compte cp2, String type,
+			double montant) {
+		cp1.setSolde(cp1.getSolde()- montant);
+		cp2.setSolde(cp2.getSolde()+ montant);
+		em.merge(cp1);
+		em.merge(cp2);
+		
+	}
+	
+	
+
+	
+	
+
 }
