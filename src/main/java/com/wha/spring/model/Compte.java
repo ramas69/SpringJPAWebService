@@ -29,6 +29,7 @@ public class Compte {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	@Column(name = "rib", nullable = false)
 	private String rib;
 	

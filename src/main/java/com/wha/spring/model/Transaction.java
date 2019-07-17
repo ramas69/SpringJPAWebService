@@ -35,7 +35,7 @@ import lombok.Setter;
 public class Transaction {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int transactionId;
 	@Column(name = "montant", nullable = false)
 	private double montant;
