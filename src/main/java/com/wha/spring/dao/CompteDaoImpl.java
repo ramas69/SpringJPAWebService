@@ -31,7 +31,7 @@ public class CompteDaoImpl extends AbstractDao implements CompteDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Compte> findAllComptes() {
-		return em.createQuery("From compte").getResultList();
+		return em.createQuery("From Compte").getResultList();
 	}
 
 	@Override
