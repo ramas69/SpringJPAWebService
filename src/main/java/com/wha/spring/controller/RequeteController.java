@@ -31,7 +31,7 @@ public class RequeteController {
 
 		//Requete ad=new Requete(0, "nom admin3", "prenom admin3", "admin3@yah.com", "lyon", "032145698", "adminpseudo3", "adminpass3");
 		//RequeteService.saveRequete(ad);
-		Requete rq=new Requete(0, new Client(), new Compte(), " message", TypeRequete.CHEQUIER);
+		Requete rq=new Requete(0, null, null, " message", TypeRequete.CHEQUIER);
 		
 		return rq;
 	}
@@ -45,16 +45,16 @@ public class RequeteController {
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/create")
-	public Requete createRequete(@RequestBody Requete Requete) {
-		Requete newRequete = requeteService.saveRequete(Requete);
+	public Requete createRequete(@RequestBody Requete requete) {
+		Requete newRequete = requeteService.saveRequete(requete);
 		return newRequete;
 	}
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/update")
-	public Requete updateaAministrateur(@RequestBody Requete Requete) {
-		requeteService.updateRequete(Requete);
-		return Requete;
+	public Requete updateRequete(@RequestBody Requete requete) {
+		requeteService.updateRequete(requete);
+		return requete;
 	}
 
 }

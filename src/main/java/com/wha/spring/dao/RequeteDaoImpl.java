@@ -30,7 +30,7 @@ public class RequeteDaoImpl extends AbstractDao implements RequeteDao{
 	@Override
 	public List<Requete> findAllRequetes() {
 		// TODO Auto-generated method stub
-		return em.createQuery("From requete").getResultList();
+		return em.createQuery("From Requete").getResultList();
 	}
 
 	@Override
