@@ -28,7 +28,7 @@ public class NotifDaoImpl extends AbstractDao implements NotifDao {
 
 	@Override
 	public List<Notification> findAllNotifications() {
-		return em.createQuery("From notification").getResultList();
+		return em.createQuery("From Notification").getResultList();
 	}
 
 	@Override

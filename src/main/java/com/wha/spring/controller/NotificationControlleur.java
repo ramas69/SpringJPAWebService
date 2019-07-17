@@ -2,9 +2,13 @@ package com.wha.spring.controller;
 
 
 import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
-import org.hibernate.type.LocalDateType;
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,17 +35,16 @@ public class NotificationControlleur {
 	
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
-	public void dummy() {
-	Notification notif1 = new Notification(0, LocalDate.now(), " message envoye t'es pauvre",null);
-		notifService.saveNotification(notif1);
-
-
-		
+	public Notification dummy() {
+	Notification notif1 = new Notification(0, Calendar.getInstance(), " message envoye t'es pauvre",null);
+		notifService.saveNotification(notif1);	
+		return notif1;
 	}
+	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/get/all", method = RequestMethod.GET)
 	public ResponseEntity<List<Notification>> getAll() {
-		List<Notification> resultat = notifService.findAllNotifications();
+		List<Notification> resultat =  notifService.findAllNotifications(); 
 		return new ResponseEntity<List<Notification>>(resultat, HttpStatus.OK);
 	}
 

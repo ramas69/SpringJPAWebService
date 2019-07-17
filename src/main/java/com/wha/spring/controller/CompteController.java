@@ -29,7 +29,7 @@ public class CompteController {
 	CompteService compteService;
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
-	public void dummy() {
+	public Compte dummy() {
 		//Compte cp1 = new Compte(0," rib", "25415", 2500.00, 1500.21, 521.69, 100.50, 1200.54, 1);
 		//Compte cp1 = new Compte(id, rib, nCompte, solde, decouvert, mntantAgios, seuilRemuneration, montantRemuneration, client)
 		
@@ -44,6 +44,7 @@ public class CompteController {
 		cp1.setMontantRemuneration(1200.54);
 		//compteService.saveCompte(cp1);
 		compteService.saveCompte(cp1);
+		return cp1;
 		
 		
 	}

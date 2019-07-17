@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -37,6 +39,7 @@ public class Compte {
 	private double solde;
 	
 	//@Column(name = "nom", nullable = false)
+	@JsonIgnore
 	@OneToMany(mappedBy="compte")
 	private List<Transaction> listeTransactions;
 	
@@ -52,6 +55,7 @@ public class Compte {
 	@Column(name = "montantRemuneration", nullable = false)
 	private double montantRemuneration;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="compte")
 	private List<Notification> listeNotifications;
 	
