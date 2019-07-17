@@ -24,9 +24,10 @@ public class ClientPotentielController {
 	ClientPotentielService clientPotentielService;
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
-	public void dummy() {
+	public ClientPotentiel dummy() {
 		ClientPotentiel cl2 = new ClientPotentiel(0, "nom"," prenom", "email", "adress", "telephone", 28.5,"piecesJustif2" );
 		clientPotentielService.saveClientPotentiel(cl2);
+		return cl2;
 		
 		
 		

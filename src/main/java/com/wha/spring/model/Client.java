@@ -38,13 +38,19 @@ public class Client extends User {
 
 
 	private int identifiant;
-	@OneToMany(mappedBy="client",fetch=FetchType.LAZY)
+	
 	@JsonIgnore
+	@OneToMany(mappedBy="client",fetch=FetchType.LAZY)
 	private List<Compte> comptes;
+	
 	private double revenuMenus;
 	private String piecesJustif;
+	
+	
 	@ManyToOne
 	private Conseiller conseiller;
+	
+	@JsonIgnore
 	@OneToMany(mappedBy="client")
 	private List<Requete> requete;
 	

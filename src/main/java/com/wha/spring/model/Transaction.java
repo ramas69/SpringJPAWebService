@@ -1,7 +1,11 @@
 package com.wha.spring.model;
 
 import java.time.LocalDate;
-import java.util.Date;
+
+
+
+
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -15,6 +19,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,7 +50,8 @@ public class Transaction {
 	@Column(name = "libelle", nullable = false)
 	private String libelle;
 
-	@Column(name = "date", nullable = false)
-	private LocalDate date;
+	@Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "date", nullable = false)
+    private Calendar date;
 
 }

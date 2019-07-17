@@ -1,5 +1,6 @@
 package com.wha.spring.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
+
 import com.wha.spring.iservice.ClientService;
 import com.wha.spring.model.Client;
 
@@ -26,11 +28,11 @@ public class ClientController {
 	ClientService clientService;
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
-	public void dummy() {
+	public Client dummy() {
 		Client cl1 = new Client(0, "nom"," prenom", "email", "adress", "telephone", "pseudo", "mdp", 001, 25.5,"piecesJustif" );
 		clientService.saveClient(cl1);
-		Client cl2 = new Client(0, "nom1"," prenom1", "email1", "adress1", "telephone1", "pseudo1", "mdp1", 002, 30.5,"piecesJustif1" );
-		clientService.saveClient(cl2);
+        return cl1;
+		
 		
 	}
 	@CrossOrigin(origins = "http://localhost:4200")

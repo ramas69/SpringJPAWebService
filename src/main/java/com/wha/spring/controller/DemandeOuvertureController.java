@@ -23,9 +23,10 @@ public class DemandeOuvertureController {
 	DemandeOuvertureService DemandeOuvertureService;
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
-	public void dummy() {
+	public DemandeOuverture dummy() {
 		DemandeOuverture deo = new DemandeOuverture(0, null, true, null);	
 		DemandeOuvertureService.saveDemandeOuverture(deo);
+		return deo;
 		
 		
 		

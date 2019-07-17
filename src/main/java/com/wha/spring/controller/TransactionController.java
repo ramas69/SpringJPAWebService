@@ -1,6 +1,7 @@
 package com.wha.spring.controller;
 
-import java.time.LocalDate;
+
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.wha.spring.iservice.TransactionService;
-import com.wha.spring.model.Compte;
 import com.wha.spring.model.Transaction;
 
 @RestController
@@ -25,9 +24,10 @@ public class TransactionController {
 	TransactionService transactionService;
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
-	public void dummy() {
-		Transaction tr1 = new Transaction(0, 12.0, null, "debit", LocalDate.now());
+	public Transaction dummy() {
+		Transaction tr1 = new Transaction(0, 12.0, null, "debit", Calendar.getInstance());
 		transactionService.saveTransaction(tr1);
+		return tr1;
 	}
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/get/all", method = RequestMethod.GET)
