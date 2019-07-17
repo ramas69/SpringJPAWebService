@@ -1,7 +1,7 @@
 package com.wha.spring.model;
 
 import java.time.LocalDate;
-import java.util.Date;
+//import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -23,7 +23,7 @@ import lombok.Setter;
 
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="user_type", discriminatorType=DiscriminatorType.STRING)
+@DiscriminatorColumn(name="transaction_type", discriminatorType=DiscriminatorType.STRING)
 @DiscriminatorValue("Transaction")
 @Getter
 @Setter
@@ -45,6 +45,6 @@ public class Transaction {
 	private String libelle;
 
 	@Column(name = "date", nullable = false)
-	private Date date;
+	private LocalDate date;
 
 }
