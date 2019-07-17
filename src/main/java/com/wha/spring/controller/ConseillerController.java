@@ -36,17 +36,12 @@ public class ConseillerController {
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
 	public Conseiller dummy() {
 
-<<<<<<< HEAD
+
   		Conseiller cs=new Conseiller(0, "omar", "kabil", "omar@h.fr", "bron", "0231456598", "omar01", "omar02");
   		conseillerService.saveConseiller(cs);
   		return cs;
 		
-=======
-		Conseiller cs = new Conseiller(0, "omar", "kabil", "omar@h.fr", "bron",
-				"0231456598", "omar01", "omar02");
-		conseillerService.saveConseiller(cs);
 
->>>>>>> springMidi
 	}
 
 	@CrossOrigin(origins = "http://localhost:4200")
