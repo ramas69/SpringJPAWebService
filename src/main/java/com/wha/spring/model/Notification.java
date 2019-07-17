@@ -1,8 +1,12 @@
 package com.wha.spring.model;
 
 
+<<<<<<< HEAD
 
 import java.util.Calendar;
+=======
+import java.time.LocalDate;
+>>>>>>> springTrans
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +17,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Type;
+
+
+//import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
