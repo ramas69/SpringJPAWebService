@@ -72,12 +72,12 @@ public class ClientController {
 	public Requete demandeRequete(@RequestBody Requete requete) {     
 		return requeteService.saveRequete(requete);
 	}
-	/*
+	
 	@CrossOrigin(origins = "http://localhost:4200")
-	@RequestMapping(value = "/compte/{idCompte}", method = RequestMethod.POST)	
-	public Compte afficherCompte(@PathVariable int idCompte) {     
-		return compteService.findById(idCompte);
-	}*/
+	@RequestMapping(value = "/compte/{id}", method = RequestMethod.GET)	
+	public Compte afficherCompte(@PathVariable int id) {     
+		return compteService.findById(id);
+	}
 	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/comptes", method = RequestMethod.GET)
@@ -86,7 +86,12 @@ public class ClientController {
 	}
 	
 	@CrossOrigin(origins = "http://localhost:4200")
-	//@PostMapping("/transactions")
+	@RequestMapping(value = "/transaction/{id}", method = RequestMethod.GET)	
+	public Transaction afficherTransaction(@PathVariable int id) {     
+		return transactionService.findById(id);
+	}
+	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/transactions", method = RequestMethod.GET)
 	public List<Transaction> listTransaction() {     		
 		return transactionService.findAllTransactions();
