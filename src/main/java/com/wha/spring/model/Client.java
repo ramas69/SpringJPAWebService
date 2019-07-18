@@ -44,6 +44,7 @@ public class Client extends User {
 	private List<Compte> comptes;
 	
 	private double revenuMenus;
+	
 	private String piecesJustif;
 	
 	
