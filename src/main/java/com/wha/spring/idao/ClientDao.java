@@ -19,7 +19,8 @@ public interface ClientDao {
 
 	void deleteClient(int identifiant);
 	
-	
+	//***
+	public List<Client> findClientByCompte(int idCompte);
 	
 
 	

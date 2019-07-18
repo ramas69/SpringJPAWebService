@@ -14,5 +14,7 @@ public interface ClientService {
 	public List<Client> findAllClients();
 
 	public void deleteClient(int identifiant);
+	//*** 
+	public List<Client> findClientByCompte(int idCompte);
 
 }

@@ -44,4 +44,11 @@ public class ClientServiceImpl implements ClientService {
 
 	}
 
+	@Override
+	public List<Client> findClientByCompte(int idCompte) {
+		// TODO Auto-generated method stub
+		return clientDAO.findClientByCompte(idCompte);
+		//return null;
+	}
+
 }

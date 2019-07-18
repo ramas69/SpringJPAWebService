@@ -17,5 +17,8 @@ public interface CompteService {
 	
 	public void virementCompte(Compte cp1, Compte cp2, String type,
 			double montant);
-
+	/** **/
+	//public List<Compte> compteByIdClient(int idClient);
+	public List<Compte> findCompteByClient(int idClient) ;
+	public void gelerCompte(Compte compte);
 }

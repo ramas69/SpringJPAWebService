@@ -40,7 +40,7 @@ public class Client extends User {
 	private int identifiant;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy="client",fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="client")
 	private List<Compte> comptes;
 	
 	private double revenuMenus;
