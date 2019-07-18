@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.wha.spring.iservice.CompteService;
 import com.wha.spring.iservice.TransactionService;
 import com.wha.spring.model.Transaction;
 
@@ -22,10 +24,14 @@ import com.wha.spring.model.Transaction;
 public class TransactionController {
 	@Autowired 
 	TransactionService transactionService;
+	@Autowired
+	CompteService compteService;
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
 	public Transaction dummy() {
-		Transaction tr1 = new Transaction(0, 12.0, null, "debit", Calendar.getInstance());
+		Transaction tr1 = new Transaction(0, 12.0, compteService.findById(3), "debit", Calendar.getInstance());
+		
+		//tr1.setCompte(compteService.findById(3));
 		transactionService.saveTransaction(tr1);
 		return tr1;
 	}

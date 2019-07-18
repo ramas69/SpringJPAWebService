@@ -1,29 +1,33 @@
 package com.wha.spring.model;
 
 
-import java.util.List;
+//import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+//import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
+//import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Table(name = "Compte")
 public class Compte {
 	@Id
@@ -39,10 +43,6 @@ public class Compte {
 	@Column(name = "solde", nullable = false)
 	private double solde;
 	
-	//@Column(name = "nom", nullable = false)
-	@JsonIgnore
-	@OneToMany(mappedBy="compte")
-	private List<Transaction> listeTransactions;
 	
 	@Column(name = "decouvert", nullable = false)
 	private double decouvert;
@@ -56,27 +56,13 @@ public class Compte {
 	@Column(name = "montantRemuneration", nullable = false)
 	private double montantRemuneration;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="compte")
-	private List<Notification> listeNotifications;
 	
-	
+	@ManyToOne
 	private Client client;
+	
+	@Column(name="gele")
+	private boolean gele;
 
-@Builder
-	public Compte(int id, String rib, String nCompte, double solde,
-			double decouvert, double mntantAgios, double seuilRemuneration,
-			double montantRemuneration, Client client) {
-		//super();
-		this.id = id;
-		this.rib = rib;
-		this.nCompte = nCompte;
-		this.solde = solde;
-		this.decouvert = decouvert;
-		this.mntantAgios = mntantAgios;
-		this.seuilRemuneration = seuilRemuneration;
-		this.montantRemuneration = montantRemuneration;
-	}
 
 	
 	

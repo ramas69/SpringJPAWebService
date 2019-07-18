@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.wha.spring.idao.CompteDao;
+import com.wha.spring.iservice.ClientService;
 import com.wha.spring.iservice.CompteService;
 import com.wha.spring.model.Compte;
 
@@ -15,6 +16,8 @@ import com.wha.spring.model.Compte;
 public class CompteServiceImpl implements CompteService {
 	@Autowired
 	CompteDao compteDAO;
+	@Autowired
+	ClientService clientService;
 
 	@Override
 	public Compte saveCompte(Compte compte) {
@@ -52,6 +55,20 @@ public class CompteServiceImpl implements CompteService {
 		
 		
 	}
+	// recherche compte par id client
+	@Override
+	public List<Compte> findCompteByClient(int idClient) {
+		// TODO Auto-generated method stub
+		 return compteDAO.findCompteByClient(idClient); 
+		//return null;
+	}
+
+	@Override
+	public void gelerCompte(Compte compte) {
+		// TODO Auto-generated method stub
+		compteDAO.gelerCompte(compte);
+	}
+
 
 	
 

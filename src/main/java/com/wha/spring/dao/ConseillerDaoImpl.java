@@ -2,9 +2,11 @@ package com.wha.spring.dao;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.wha.spring.idao.CompteDao;
 import com.wha.spring.idao.ConseillerDao;
 import com.wha.spring.model.Compte;
 import com.wha.spring.model.Conseiller;
@@ -14,6 +16,9 @@ import com.wha.spring.model.Requete;
 @Transactional
 public class ConseillerDaoImpl extends AbstractDao implements ConseillerDao {
 
+	@Autowired
+	CompteDao comptDao;
+	
 	@Override
 	public Conseiller saveConseiller(Conseiller conseiller) {
 		// TODO Auto-generated method stub
@@ -67,6 +72,8 @@ public class ConseillerDaoImpl extends AbstractDao implements ConseillerDao {
 		//compte.getId();
 		
 	}
+
+
 	
 
 }

@@ -2,6 +2,7 @@ package com.wha.spring.idao;
 
 import java.util.List;
 
+import com.wha.spring.model.Client;
 import com.wha.spring.model.Compte;
 
 public interface CompteDao {
@@ -18,6 +19,11 @@ public interface CompteDao {
 	
 	public void virementCompte(Compte cp1, Compte cp2, String type, double montant );
 
-	
-
+	/**  
+	 * 
+	 */
+	//public List<Compte> compteByIdClient(Client client);
+	 public List<Compte> findCompteByClient(int idClient) ;
+	 
+	 public void gelerCompte(Compte compte);
 }

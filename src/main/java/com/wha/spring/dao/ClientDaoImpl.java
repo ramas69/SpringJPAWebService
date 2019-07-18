@@ -30,6 +30,7 @@ public class ClientDaoImpl extends AbstractDao implements ClientDao {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Client> findAllClients() {
 		return em.createQuery("From Client").getResultList();
@@ -51,6 +52,21 @@ public class ClientDaoImpl extends AbstractDao implements ClientDao {
 	        em.merge(client);
 	 }
 
+<<<<<<< HEAD
 	
+=======
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Client> findClientByCompte(int idCompte) {
+		// TODO Auto-generated method stub
+		
+		return  em.createQuery(" SELECT cl,cp FROM Client cl,Compte cp "+
+								" WHERE cp.id="+idCompte+
+								" AND cl.id=cp.client.id ")
+								
+	                .getResultList();
+	}
+
+>>>>>>> springJeudiMatin
 
 }

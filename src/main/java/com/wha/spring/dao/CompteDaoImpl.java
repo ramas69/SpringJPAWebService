@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.wha.spring.idao.CompteDao;
 import com.wha.spring.idao.UserDao;
+import com.wha.spring.model.Client;
 import com.wha.spring.model.Compte;
 import com.wha.spring.model.User;
 
@@ -54,9 +55,23 @@ public class CompteDaoImpl extends AbstractDao implements CompteDao {
 		em.merge(cp2);
 		
 	}
-	
-	
 
+
+	@SuppressWarnings("unchecked")
+	@Override
+    public List<Compte> findCompteByClient(int idClient) {
+        return em.createQuery("SELECT c FROM Compte c WHERE c.client.id = :custId")
+                .setParameter("custId", idClient)
+                .getResultList();
+        
+    }
+
+	@Override
+	public void gelerCompte(Compte compte) {
+		// TODO Auto-generated method stub
+		compte.setGele(true);
+		em.merge(compte);
+	}
 	
 	
 

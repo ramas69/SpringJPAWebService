@@ -47,6 +47,7 @@ public class ClientServiceImpl implements ClientService {
 		clientDAO.deleteClient(identifiant);
 
 	}
+<<<<<<< HEAD
 	
 	@Override
     public void reaffectationClient(Client client, Conseiller conseiller) {
@@ -55,4 +56,14 @@ public class ClientServiceImpl implements ClientService {
     }
 	
 	
+=======
+
+	@Override
+	public List<Client> findClientByCompte(int idCompte) {
+		// TODO Auto-generated method stub
+		return clientDAO.findClientByCompte(idCompte);
+		//return null;
+	}
+
+>>>>>>> springJeudiMatin
 }

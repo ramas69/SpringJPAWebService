@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wha.spring.iservice.ClientService;
 import com.wha.spring.iservice.CompteService;
 import com.wha.spring.iservice.UserService;
 import com.wha.spring.model.Compte;
@@ -25,26 +26,15 @@ public class CompteController {
 
 	@Autowired(required=true)
 	CompteService compteService;
+	@Autowired
+	ClientService clientService;
 
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
 	public Compte dummy() {
-		// Compte cp1 = new Compte(0," rib", "25415", 2500.00, 1500.21, 521.69,
-		// 100.50, 1200.54, 1);
-		// Compte cp1 = new Compte(id, rib, nCompte, solde, decouvert,
-		// mntantAgios, seuilRemuneration, montantRemuneration, client)
 
-		Compte cp1 = new Compte();
-		cp1.setId(0);
-		cp1.setRib("12345");
-		cp1.setNCompte("00124500");
-		cp1.setSolde(2500.00);
-		cp1.setDecouvert(1500.21);
-		cp1.setMntantAgios(251.69);
-		cp1.setSeuilRemuneration(100.50);
-		cp1.setMontantRemuneration(1200.54);
-		// compteService.saveCompte(cp1);
-		compteService.saveCompte(cp1);
-		return cp1;
+		Compte cp=new Compte(0, "00691220", "0069", 1000.0, 200.0, 250.0, 100.0, 250.0, clientService.findById(17), false);
+		compteService.saveCompte(cp);
+		return cp;
 
 	}
 
@@ -69,7 +59,7 @@ public class CompteController {
 		return compte;
 
 	}
-
+   // virement
 	@CrossOrigin(origins = "http://localhost:4200")
 	//@PostMapping("/virement")
 	@RequestMapping(value = "/virement/{idCompte1}/{idCompte2}/{type}/{montant}", method = RequestMethod.GET)
@@ -83,4 +73,17 @@ public class CompteController {
 		 compteService.virementCompte(cp1, cp2, type, montant);
 		
 	}
+	
+	// geller compte
+	@CrossOrigin(origins = "http://localhost:4200")
+	//@PutMapping("/geler/{idClient}")
+	@RequestMapping(value = "/geler/{idCompte}", method = RequestMethod.GET)
+	public Compte gelerCompte(@PathVariable int idCompte) {
+		Compte compte=compteService.findById(idCompte);
+		System.out.println(" id de compte trouvé "+compte.getId()); 
+		 compteService.gelerCompte(compte);
+		return compte;
+
+	}
+	
 }
