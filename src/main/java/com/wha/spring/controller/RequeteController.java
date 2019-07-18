@@ -21,7 +21,7 @@ import com.wha.spring.model.TypeRequete;
 //import com.wha.spring.model.Requete;
 
 @RestController
-@RequestMapping("requete")
+@RequestMapping("requetes")
 public class RequeteController {
 	@Autowired /*(required=true)*/
 	RequeteService requeteService;

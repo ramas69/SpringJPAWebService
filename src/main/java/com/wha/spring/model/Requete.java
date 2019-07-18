@@ -1,6 +1,7 @@
 package com.wha.spring.model;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
@@ -36,6 +37,7 @@ public class Requete {
 	private String message;
 	
 	@Enumerated
+	@Column()
 	private TypeRequete type;
 
 }
