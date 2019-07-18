@@ -18,8 +18,7 @@ import com.wha.spring.model.DemandeOuverture;
 public class ClientServiceImpl implements ClientService {
 	@Autowired
 	ClientDao clientDAO;
-	
-	
+
 	@Override
 	public Client saveClient(Client client) {
 		clientDAO.saveClient(client);
@@ -47,23 +46,18 @@ public class ClientServiceImpl implements ClientService {
 		clientDAO.deleteClient(identifiant);
 
 	}
-<<<<<<< HEAD
-	
+
 	@Override
-    public void reaffectationClient(Client client, Conseiller conseiller) {
-        clientDAO.reaffectationClient(client, conseiller);        
-        
-    }
-	
-	
-=======
+	public void reaffectationClient(Client client, Conseiller conseiller) {
+		clientDAO.reaffectationClient(client, conseiller);
+
+	}
 
 	@Override
 	public List<Client> findClientByCompte(int idCompte) {
 		// TODO Auto-generated method stub
 		return clientDAO.findClientByCompte(idCompte);
-		//return null;
+		// return null;
 	}
 
->>>>>>> springJeudiMatin
 }

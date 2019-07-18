@@ -17,7 +17,6 @@ import com.wha.spring.model.TypeRequete;
 @Transactional
 public class ClientDaoImpl extends AbstractDao implements ClientDao {
 
-	
 	@Override
 	public Client saveClient(Client client) {
 		em.persist(client);
@@ -46,27 +45,22 @@ public class ClientDaoImpl extends AbstractDao implements ClientDao {
 		em.remove(findById(identifiant));
 
 	}
-	
-	 public void reaffectationClient(Client client, Conseiller conseiller) {
-	        client.setConseiller(conseiller);
-	        em.merge(client);
-	 }
 
-<<<<<<< HEAD
-	
-=======
+	public void reaffectationClient(Client client, Conseiller conseiller) {
+		client.setConseiller(conseiller);
+		em.merge(client);
+	}
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Client> findClientByCompte(int idCompte) {
 		// TODO Auto-generated method stub
-		
-		return  em.createQuery(" SELECT cl,cp FROM Client cl,Compte cp "+
-								" WHERE cp.id="+idCompte+
-								" AND cl.id=cp.client.id ")
-								
-	                .getResultList();
-	}
 
->>>>>>> springJeudiMatin
+		return em.createQuery(
+				" SELECT cl,cp FROM Client cl,Compte cp " + " WHERE cp.id="
+						+ idCompte + " AND cl.id=cp.client.id ")
+
+		.getResultList();
+	}
 
 }

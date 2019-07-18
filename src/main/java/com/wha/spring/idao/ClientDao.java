@@ -9,7 +9,6 @@ import com.wha.spring.model.DemandeOuverture;
 import com.wha.spring.model.Requete;
 import com.wha.spring.model.TypeRequete;
 
-
 public interface ClientDao {
 	Client saveClient(Client client);
 
@@ -20,19 +19,10 @@ public interface ClientDao {
 	Client findById(int identifiant);
 
 	void deleteClient(int identifiant);
-	
-<<<<<<< HEAD
-	void reaffectationClient(Client client, Conseiller conseiller);
-	
-	
-	
-	
-=======
-	//***
-	public List<Client> findClientByCompte(int idCompte);
->>>>>>> springJeudiMatin
-	
 
-	
+	void reaffectationClient(Client client, Conseiller conseiller);
+
+	// ***
+	public List<Client> findClientByCompte(int idCompte);
 
 }

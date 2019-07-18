@@ -16,14 +16,10 @@ public interface ClientService {
 	public List<Client> findAllClients();
 
 	public void deleteClient(int identifiant);
-<<<<<<< HEAD
-	
+
 	void reaffectationClient(Client client, Conseiller conseiller);
-	
-	
-=======
-	//*** 
+
+	// ***
 	public List<Client> findClientByCompte(int idCompte);
->>>>>>> springJeudiMatin
 
 }
