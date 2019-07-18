@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.wha.spring.idao.ClientDao;
 import com.wha.spring.model.Client;
 import com.wha.spring.model.Compte;
+import com.wha.spring.model.Conseiller;
+import com.wha.spring.model.DemandeOuverture;
 import com.wha.spring.model.Requete;
 import com.wha.spring.model.TypeRequete;
 
@@ -43,6 +45,12 @@ public class ClientDaoImpl extends AbstractDao implements ClientDao {
 		em.remove(findById(identifiant));
 
 	}
+	
+	 public void reaffectationClient(Client client, Conseiller conseiller) {
+	        client.setConseiller(conseiller);
+	        em.merge(client);
+	 }
 
+	
 
 }

@@ -7,15 +7,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.wha.spring.idao.ClientDao;
+import com.wha.spring.idao.DemandeOuvertureDao;
 import com.wha.spring.iservice.ClientService;
 import com.wha.spring.model.Client;
+import com.wha.spring.model.Conseiller;
+import com.wha.spring.model.DemandeOuverture;
 
 @Service("clientService")
 @Transactional
 public class ClientServiceImpl implements ClientService {
 	@Autowired
 	ClientDao clientDAO;
-
+	
+	
 	@Override
 	public Client saveClient(Client client) {
 		clientDAO.saveClient(client);
@@ -43,5 +47,12 @@ public class ClientServiceImpl implements ClientService {
 		clientDAO.deleteClient(identifiant);
 
 	}
-
+	
+	@Override
+    public void reaffectationClient(Client client, Conseiller conseiller) {
+        clientDAO.reaffectationClient(client, conseiller);        
+        
+    }
+	
+	
 }

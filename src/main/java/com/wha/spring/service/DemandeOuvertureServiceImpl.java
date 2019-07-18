@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.wha.spring.idao.DemandeOuvertureDao;
 import com.wha.spring.iservice.DemandeOuvertureService;
+import com.wha.spring.model.Conseiller;
 import com.wha.spring.model.DemandeOuverture;
 
 
@@ -17,6 +18,10 @@ public class DemandeOuvertureServiceImpl implements DemandeOuvertureService {
 
 	@Autowired
 	DemandeOuvertureDao DemandeOuvertureDAO;
+	
+	@Autowired
+	DemandeOuvertureDao demandeOuvertureDAO;
+
 
 	@Override
 	public DemandeOuverture saveDemandeOuverture(DemandeOuverture demandeOuverture) {
@@ -44,5 +49,12 @@ public class DemandeOuvertureServiceImpl implements DemandeOuvertureService {
 	public void deleteDemandeOuverture(int id) {
 		DemandeOuvertureDAO.deleteDemandeOuverture(id);
 	}
+	
+	@Override
+    public void affectationDemandeOuverture(DemandeOuverture demandeOuverture, Conseiller conseiller) {
+        demandeOuvertureDAO.affectationDemandeOuverture(demandeOuverture, conseiller);        
+        
+    }
+
 }
 

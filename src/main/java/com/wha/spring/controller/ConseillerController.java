@@ -65,6 +65,14 @@ public class ConseillerController {
 		conseillerService.updateConseiller(conseiller);
 		return conseiller;
 	}
+	
+		
+//	@CrossOrigin(origins = "http://localhost:4200")
+//	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+//	public void deleteConseiller(@PathVariable int id) {
+//		 conseillerService.deleteConseiller(id);
+//		
+//	}
 
 	/**
 	 * 
