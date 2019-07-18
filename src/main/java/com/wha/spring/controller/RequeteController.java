@@ -17,7 +17,7 @@ import com.wha.spring.iservice.RequeteService;
 import com.wha.spring.model.Client;
 import com.wha.spring.model.Compte;
 import com.wha.spring.model.Requete;
-import com.wha.spring.model.TypeRequete;
+import com.wha.spring.model.TypeRequete; 
 //import com.wha.spring.model.Requete;
 
 @RestController

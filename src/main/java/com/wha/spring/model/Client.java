@@ -22,12 +22,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@DiscriminatorValue("Client")
+@DiscriminatorValue("Client") 
 
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor 
 
 @Table(name = "Client")
 public class Client extends User {

@@ -20,7 +20,7 @@ import com.wha.spring.iservice.CompteService;
 import com.wha.spring.iservice.ConseillerService;
 import com.wha.spring.iservice.RequeteService;
 import com.wha.spring.model.Compte;
-import com.wha.spring.model.Conseiller;
+import com.wha.spring.model.Conseiller; 
 
 @RestController
 @RequestMapping("conseiller")
