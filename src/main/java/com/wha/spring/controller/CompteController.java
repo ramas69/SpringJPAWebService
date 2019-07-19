@@ -32,7 +32,7 @@ public class CompteController {
 	@RequestMapping(value = "/create/dummy", method = RequestMethod.GET)
 	public Compte dummy() {
 
-		Compte cp=new Compte(0, "00691220", "0069", 1000.0, 200.0, 250.0, 100.0, 250.0, clientService.findById(17), false);
+		Compte cp=new Compte(0, "00691220", "0069", 1000.0, 200.0, 250.0, 100.0, 250.0, clientService.findById(13), true);
 		compteService.saveCompte(cp);
 		return cp;
 
