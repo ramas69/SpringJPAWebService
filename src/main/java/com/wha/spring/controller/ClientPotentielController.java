@@ -17,6 +17,7 @@ import com.wha.spring.iservice.ClientPotentielService;
 import com.wha.spring.model.ClientPotentiel;
 
 @RestController
+@CrossOrigin(maxAge=3600)
 @RequestMapping("clientsPotentiels")
 public class ClientPotentielController {
 	

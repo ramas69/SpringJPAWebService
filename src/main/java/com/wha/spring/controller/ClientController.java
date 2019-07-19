@@ -24,6 +24,7 @@ import com.wha.spring.model.Transaction;
 
 
 @RestController
+@CrossOrigin(maxAge=3600)
 @RequestMapping("clients")
 public class ClientController {
 	@Autowired 

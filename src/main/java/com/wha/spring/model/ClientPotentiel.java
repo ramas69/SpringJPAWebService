@@ -44,7 +44,7 @@ public class ClientPotentiel {
 	@Column(name = "revenuMens", nullable = false)
 	private Double revenuMens;
 	
-	@Column(name = "piecesJustif", nullable = false)
+	@Column(name = "piecesJustif", nullable = true)
 	private String piecesJustif;
 	
 
